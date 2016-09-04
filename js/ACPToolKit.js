@@ -52,7 +52,7 @@ var ACPToolKit = (function () {
 
         var csvString = csvRows.join('\r\n');
         var $a = $('<a></a>', {
-                href: 'data:attachment/csv;charset=utf-8,' + escape(csvString),
+                href: 'data:attachment/csv;charset=utf-8,' + encodeURIComponent(csvString),
                 target: '_blank',
                 download: fileName + '.csv'
             });
@@ -84,6 +84,7 @@ var ACPToolKit = (function () {
 
             $('.js-expt-technique').text(options.technique);
             $('.js-expt-granularity').text(options.granularity);
+            $('.js-expt-language').text(options.language);
             $('.js-expt-stimuli').text(options.stimuli);
 
             // Clean up DOM

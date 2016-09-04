@@ -1,17 +1,7 @@
-What is ampere? Unit of electrical current. 12 is the number
+Định luật bảo toàn năng lượng, cũng là một định luật nhiệt động lực học (một trong bốn định luật của nhiệt động lực học), phát biểu rằng năng lượng (hoặc đại lượng tương đương của nó là khối lượng tương đối tính) không thể tự nhiên sinh ra hoặc mất đi.
 
-What is amplifier? A circuit that increases the voltage, current, or power of a signal.
+Trong toàn vũ trụ, tổng năng lượng không đổi. Nó chỉ có thể chuyển từ hệ này sang hệ khác. Người ta không thể "tạo ra" năng lượng, người ta chỉ "chuyển dạng" năng lượng mà thôi.
 
-What is amplitude? Magnitude or size of a signal voltage or current.
+Định luật bảo toàn năng lượng là một nguyên lý tổng quát cho tất cả các lý thuyết vật lý (cơ học, điện từ học, vật lý hạt nhân,...). Chưa từng thấy ngoại lệ của định luật này. Tuy rằng đôi khi người ta cũng nghi ngờ nó, nhất là trong các phân rã phóng xạ. Tiên đề Noether cho rằng sự bảo toàn năng lượng có liên quan chặt chẽ tới độ đồng dạng về cấu trúc của không-thời gian.
 
-What is analog? Information represented as continuously varying voltage or current rather than in discrete levels as opposed to digital data varying between two discrete levels.
-
-What is anode? The positive electrode or terminal of a device. The "P" material of a diode.
-
-What is antenna, receiving? A device that converts a radiated electromagnetic wave into an electrical wave.
-
-What is apparent power? Power attained in an AC circuit as a product of effective voltage and current which reach their peak at different times.
-
-What is armature? The rotating or moving component of a magnetic circuit.
-
-What is armstrong oscillator? An oscillator that uses an isolation transformer to achieve positive feedback from output to input.
+Định luật bảo toàn năng lượng: Năng lượng không tự sinh ra cũng không tự mất đi. Nó chỉ chuyển từ dạng này sang dạng khác.

@@ -1,40 +1,100 @@
 {
     "experiments": [
         { 
-            "technique": "AUTOCOMPASTE", 
-            "granularity": "sentence",
-            "data_file": "data/texts.json",
-            "stimuli": "What is acceptor atoms?" 
-        },
-        { 
-            "technique": "AUTOCOMPASTE", 
-            "granularity": "paragraph",
-            "data_file": "data/texts.json",
-            "stimuli": "What is AC coupling? Circuit that passes an AC signal while blocking a DC voltage." 
-        },
-        { 
+            "id": "1",
             "technique": "AUTOCOMPASTE", 
             "granularity": "phrase",
+            "language": "English",
             "data_file": "data/texts.json",
             "stimuli": "number of positive charges" 
         },
         { 
-            "technique": "TRADITIONAL", 
+            "id": "2",
+            "technique": "AUTOCOMPASTE", 
             "granularity": "sentence",
+            "language": "English",
             "data_file": "data/texts.json",
             "stimuli": "What is acceptor atoms?" 
         },
         { 
-            "technique": "TRADITIONAL", 
+            "id": "3",
+            "technique": "AUTOCOMPASTE", 
             "granularity": "paragraph",
+            "language": "English",
             "data_file": "data/texts.json",
             "stimuli": "What is AC coupling? Circuit that passes an AC signal while blocking a DC voltage." 
         },
         { 
+            "id": "4",
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "phrase",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "lực cơ bản khác" 
+        },
+        { 
+            "id": "5",
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "sentence",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "Trong vật lý học, lực hấp dẫn là lực hút giữa mọi vật chất." 
+        },
+        { 
+            "id": "6",
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "paragraph",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "Năng lượng không tự sinh ra cũng không tự mất đi. Nó chỉ chuyển từ dạng này sang dạng khác." 
+        },
+        { 
+            "id": "7",
             "technique": "TRADITIONAL", 
             "granularity": "phrase",
+            "language": "English",
             "data_file": "data/texts.json",
-            "stimuli": "number of positive charges" 
-        }        
+            "stimuli": "bistable multivibrator" 
+        },
+        { 
+            "id": "8",
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "What is barrier potential?" 
+        },
+        { 
+            "id": "9",
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "Relating to frequencies that can be heard by the human ear. Approximately 20 Hz to 20 kHz." 
+        },
+        { 
+            "id": "10",
+            "technique": "TRADITIONAL", 
+            "granularity": "phrase",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "cơ học cổ điển" 
+        },        
+        { 
+            "id": "11",
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "Lực hấp dẫn là một trong bốn lực cơ bản của tự nhiên." 
+        },
+        { 
+            "id": "12",
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "Trong toàn vũ trụ, tổng năng lượng không đổi. Nó chỉ có thể chuyển từ hệ này sang hệ khác." 
+        }
     ]
 }
