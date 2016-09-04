@@ -35,59 +35,64 @@
                 <div class="col-md-8 col-md-offset-2">
                     <h1>Pre-Experiment Questionnaire</h1>
                     <hr>
-                    <p>This part of the interface collects whatever pre-experiment information. Please come up with a basic questionnaire to help you to gather participant information. The purpose of this questionnaire is to report the participant data and convince readers that you have picked an appropriate target user group and the result has certain generalizability.</p>
 
-                    <p>Please put all information needed for participant: <span class="js-pid pid"></span></p>
+                    <p>Hello participant <span class="js-pid pid"></span>. Please answer the following questions</p>
 
                     <form id="pre-expt-form">
-                        <div class="form-group">
-                            <label for="q1">Question 1 - Text</label>
-                            <input type="text" class="form-control" id="q1" name="q1" placeholder="Enter answer">
+                        <div id="q1-container" class="form-group">
+                            <label for="q1">What is your age?</label>
+                            <input type="text" class="form-control" id="q1" name="q1" placeholder="Your age, number only"
+                                onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </div>
                         <div class="form-group">
-                            <label for="q2">Question 2 - Radio</label>
+                            <label id="q2-label" for="q2">What is your gender?</label>
                             <div class="radio">
                               <label>
-                                <input type="radio" name="q2" id="optionsRadios1" value="radio1">
-                                Radio response 1
+                                <input type="radio" name="q2" id="optionsRadios1" value="male">
+                                Male
                               </label>
                             </div>
                             <div class="radio">
                               <label>
-                                <input type="radio" name="q2" id="optionsRadios2" value="radio2">
-                                Radio response 2
+                                <input type="radio" name="q2" id="optionsRadios2" value="female">
+                                Female
                               </label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="q3">Question 3 - Checkbox</label>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" name="q3" value="checkbox1">
-                                Checkbox response 1
-                              </label>
-                            </div>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" name="q3" value="checkbox2">
-                                Checkbox response 2
-                              </label>
-                            </div>
+                        <div id="q3-container" class="form-group">
+                            <label for="q3">What is your occupation?</label>
+                            <input type="text" class="form-control" id="q3" name="q3" placeholder="eg: Student">
                         </div>
-                        <div class="form-group">
-                            <label for="q4">Question 4 - Select Options</label>
-                            <select class="form-control" name="q4">
-                                <option value="option1">Option response 1</option>
-                                <option value="option2">Option response 2</option>
-                                <option value="option3">Option response 3</option>
-                                <option value="option4">Option response 4</option>
-                                <option value="option1">Option response 5</option>
+                        <div id="q4-container" class="form-group">
+                            <label for="q4">What is your highest education?</label>
+                            <select class="form-control" id="q4" name="q4">
+                                <option value="option0"></option>
+                                <option value="option1">High school diploma</option>
+                                <option value="option2">Bachelor degree</option>
+                                <option value="option3">Postgraduate degree (Master, Phd, etc...)</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="q5">Question 5 - Textarea</label>
-                            <textarea class="form-control" id="q5" name="q5" placeholder="Enter response"></textarea>
+                        <div id="q5-container" class="form-group">
+                            <label for="q5">What is your experience with computer?</label>
+                            <select class="form-control" id="q5" name="q5">
+                                <option value="option0"></option>
+                                <option value="option1">Novice (only have minimal knowldege of how to use a computer)</option>
+                                <option value="option2">Average (can do most of the basic daily tasks with computer such as writing documents, compsing mails, etc...)</option>
+                                <option value="option3">Expert (can do everything with computer)</option>
+                            </select>
                         </div>
+                        <div id="q6-container" class="form-group">
+                            <label for="q6">Do you use copy and paste functions in computer frequently? (eg: copy a paragraph in an article to your personal notebook for future use)</label>
+                            <select class="form-control" id="q6" name="q6">
+                                <option value="option0"></option>
+                                <option value="option1">Never use it before</option>
+                                <option value="option2">Rarely (few times per month)</option>
+                                <option value="option3">Sometimes (few times per week)</option>
+                                <option value="option4">Often (1-2 times per day)</option>
+                                <option value="option5">Always (many times per day)</option>
+                            </select>
+                        </div>
+                        <p id="error-text" class="hide" style="color:red;"><strong>Please answer all questions!</strong></p>
                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                     </form>
                 </div>
@@ -105,10 +110,90 @@
                 $('#pre-expt-form').submit(function (event) {
                     event.preventDefault();
                     var formResponses = $(this).serializeArray();
+
+                    var $errorText = document.getElementById('error-text');
+                    var $q1Container = document.getElementById("q1-container");
+                    var $q1Input = document.getElementById("q1");
+                    var $q2Label = document.getElementById("q2-label");
+                    var $q3Container = document.getElementById("q3-container");
+                    var $q3Input = document.getElementById("q3");
+                    var $q4Container = document.getElementById("q4-container");
+                    var $q4Input = document.getElementById("q4");
+                    var $q5Container = document.getElementById("q5-container");
+                    var $q5Input = document.getElementById("q5");
+                    var $q6Container = document.getElementById("q6-container");
+                    var $q6Input = document.getElementById("q6");
+
+                    var hasError = false;
+                    if(formResponses[0].value == ''){
+                        $q1Container.className += " has-error";
+                        $errorText.className -= 'hide';
+                        $q1Input.focus();
+                        hasError = true;
+                    } else {
+                        $q1Container.className -= " has-error";
+                    }
+
+                    var q3Ans, q4Ans, q5Ans, q6Ans;
+                    if(formResponses.length === 5){
+                        $q2Label.style.color = 'red';
+                        $errorText.className -= 'hide';
+                        
+                        q3Ans = formResponses[1];
+                        q4Ans = formResponses[2];
+                        q5Ans = formResponses[3];
+                        q6Ans = formResponses[4];
+                        hasError = true;
+                    } else {
+                        $q2Label.style.color = null;
+
+                        q3Ans = formResponses[2];
+                        q4Ans = formResponses[3];
+                        q5Ans = formResponses[4];
+                        q6Ans = formResponses[5];
+                    }
+
+                    if(q3Ans.value == ''){
+                        $q3Container.className += " has-error";
+                        $errorText.className -= 'hide';
+                        $q3Input.focus();
+                        hasError = true;
+                    } else {
+                        $q3Container.className -= " has-error";
+                    }
+
+                    if(q4Ans.value == 'option0'){
+                        $q4Container.className += " has-error";
+                        $errorText.className -= 'hide';
+                        $q4Input.focus();
+                        hasError = true;
+                    } else {
+                        $q4Container.className -= " has-error";
+                    }
+
+                    if(q5Ans.value == 'option0'){
+                        $q5Container.className += " has-error";
+                        $errorText.className -= 'hide';
+                        $q5Input.focus();
+                        hasError = true;
+                    } else {
+                        $q5Container.className -= " has-error";
+                    }
+
+                    if(q6Ans.value == 'option0'){
+                        $q6Container.className += " has-error";
+                        $errorText.className -= 'hide';
+                        $q6Input.focus();
+                        hasError = true;
+                    } else {
+                        $q6Container.className -= " has-error";
+                    }
                     // Do your own form validation here.
                     // Download the form responses to be analysed later.
-                    ACPToolKit.downloadFormData(formResponses, 'pre');
-                    window.location = 'instructions.html';
+                    if(!hasError){
+                        ACPToolKit.downloadFormData(formResponses, 'pre');
+                        window.location = 'instructions.html';    
+                    }
                 });
             });
         </script>
