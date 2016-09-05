@@ -81,17 +81,19 @@
             var trialsData;
             var currentTrial;
             var totalNumberOfTrials;
-            var headers = ['Participant id', 'Technique', 'Granularity', 'Language',
+            var headers = ['Participant id', 'Trial id', 'Technique', 'Granularity', 'Language',
                             'Trial no', 'Stimuli', 'User Response', 'Trial Start Time',
                             'Trial End Time', 'Trial Time', 'Accuracy'];
             var trialData = [];
             var participantId;
+            var sequence;
 
             function next () {
                 if (currentTrial !== 0) {
                     // Save results of current trial
                     var trialResult = ACPToolKit.getCurrentTrialState();
 
+                    var trialId = trialResult.id;
                     var technique = trialResult.technique;
                     var granularity = trialResult.granularity;
                     var language = trialResult.language;
@@ -103,7 +105,7 @@
                     var trialDuration = trialResult.duration;
                     var accuracy = stimuli === userResponse ? 1 : 0;
 
-                    var row = [participantId, technique, granularity, language, trialNum,
+                    var row = [participantId, trialId, technique, granularity, language, trialNum,
                                 stimuli, userResponse, trialStartTime,
                                 trialEndTime, trialDuration, accuracy];
                     trialData.push(row);
@@ -111,7 +113,7 @@
 
                 if (currentTrial < totalNumberOfTrials) {
                     // Show the next trial
-                    ACPToolKit.presentTrial(trialsData[currentTrial]);
+                    ACPToolKit.presentTrial(trialsData[sequence[currentTrial]-1]);
                     currentTrial += 1;
                     $('.js-expt-current-trial').text(currentTrial);
                 } else {
@@ -125,13 +127,23 @@
                 $.get('data/experiments.json', function (data) {
                     // Initialise experiments
                     //trialsData = data.experiments;
-                    trialsData = $.parseJSON(data).experiments
+                    trialsData = $.parseJSON(data).experiments;
+                    trialsOrder = $.parseJSON(data).tests;
                     currentTrial = 0;
                     totalNumberOfTrials = trialsData.length;
                     $('.js-expt-num-trials').text(totalNumberOfTrials);
                     trialData.push(headers);
-                    next();
                     participantId = ACPToolKit.getCurrentParticipantId();
+
+                    // Get the sequence of this participant
+                    for (var i =0; i< trialsOrder.length; i++){
+                        if(trialsOrder[i].participantId === participantId){
+                            sequence = trialsOrder[i].sequence;
+                            break;
+                        }
+                    }
+
+                    next();
                 })
             });
         </script>

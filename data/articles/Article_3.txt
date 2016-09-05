@@ -5,3 +5,7 @@ Trong toàn vũ trụ, tổng năng lượng không đổi. Nó chỉ có thể 
 Định luật bảo toàn năng lượng là một nguyên lý tổng quát cho tất cả các lý thuyết vật lý (cơ học, điện từ học, vật lý hạt nhân,...). Chưa từng thấy ngoại lệ của định luật này. Tuy rằng đôi khi người ta cũng nghi ngờ nó, nhất là trong các phân rã phóng xạ. Tiên đề Noether cho rằng sự bảo toàn năng lượng có liên quan chặt chẽ tới độ đồng dạng về cấu trúc của không-thời gian.
 
 Định luật bảo toàn năng lượng: Năng lượng không tự sinh ra cũng không tự mất đi. Nó chỉ chuyển từ dạng này sang dạng khác.
+
+Thả một hòn bi từ trên cao xuống một cái chén. Hòn bi từ trên cao rơi xuống là thế năng rớt xuống. Chuyển động quanh thành chén là động năng đồng thời phát ra tiếng động là âm năng. Ngoài ra nó còn ma sát với thành chén tạo ra nhiệt năng. Vậy ta có thể thấy từ một dạng năng lượng là thế năng nó lại bị chuyển hóa thành 3 dạng năng lượng như đã nêu ở trên.
+
+Khi đun một ấm nước thì nhiệt năng đã chuyển hóa thành động năng.
