@@ -36,59 +36,68 @@
                 <div class="col-md-8 col-md-offset-2">
                     <h1>Post-Experiment Questionnaire</h1>
                     <hr>
-                    <p>This part of the interface collects whatever post-experiment information. After the experiment, you want to collect more qualitative and quantitative feedback about the tested techniques. Some of the typical questions include, personal preferences, any difficulties participants experienced in the experiment, and areas of improvement. Please design a basic post-experimental questionnaire (no more than 10 questions).</p>
+                    <p>Thank you for your participation. Please take a few more minutes to help answering the following questions.</p>
 
                     <p>Current participant: <span class="js-pid pid"></span></p>
 
                     <form id="post-expt-form">
-                        <div class="form-group">
-                            <label for="q1">Question 1 - Text</label>
-                            <input type="text" class="form-control" id="q1" name="q1" placeholder="Enter answer">
+                        <div id="q1-container" class="form-group">
+                            <label for="q1">Rate the ease of use of TRADITIONAL technique</label>
+                            <select class="form-control" id="q1" name="q1">
+                                <option value="option0"></option>
+                                <option value="option1">Very difficult to use</option>
+                                <option value="option2">Difficult to use</option>
+                                <option value="option3">Moderate</option>
+                                <option value="option4">Easy to use</option>
+                                <option value="option5">Very easy to use</option>
+                            </select>
                         </div>
-                        <div class="form-group">
-                            <label for="q2">Question 2 - Radio</label>
-                            <div class="radio">
-                              <label>
-                                <input type="radio" name="q2" id="optionsRadios1" value="radio1">
-                                Radio response 1
-                              </label>
-                            </div>
-                            <div class="radio">
-                              <label>
-                                <input type="radio" name="q2" id="optionsRadios2" value="radio2">
-                                Radio response 2
-                              </label>
-                            </div>
+                        <div id="q2-container" class="form-group">
+                            <label for="q2">Rate the ease of use of AUTOCOMPASTE technique</label>
+                            <select class="form-control" id="q2" name="q2">
+                                <option value="option0"></option>
+                                <option value="option1">Very difficult to use</option>
+                                <option value="option2">Difficult to use</option>
+                                <option value="option3">Moderate</option>
+                                <option value="option4">Easy to use</option>
+                                <option value="option5">Very easy to use</option>
+                            </select>
                         </div>
-                        <div class="form-group">
-                            <label for="q3">Question 3 - Checkbox</label>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" name="q3" value="checkbox1">
-                                Checkbox response 1
-                              </label>
-                            </div>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" name="q3" value="checkbox2">
-                                Checkbox response 2
-                              </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="q4">Question 4 - Select Options</label>
-                            <select class="form-control" name="q4">
-                                <option value="option1">Option response 1</option>
-                                <option value="option2">Option response 2</option>
-                                <option value="option3">Option response 3</option>
-                                <option value="option4">Option response 4</option>
-                                <option value="option1">Option response 5</option>
+                        <div id="q3-container" class="form-group">
+                            <label for="q3">Did you use TRADITIONAL technique prior to this experiment?</label>
+                            <select class="form-control" id="q3" name="q3">
+                                <option value="option0"></option>
+                                <option value="option1">Never use it before</option>
+                                <option value="option2">Rarely (few times per month)</option>
+                                <option value="option3">Sometimes (few times per week)</option>
+                                <option value="option4">Often (1-2 times per day)</option>
+                                <option value="option5">Always (many times per day)</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="q5">Question 5 - Textarea</label>
+                            <label id="q4-label" for="q4">Which technique do you like more?</label>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q4" id="optionsRadios1" value="traditional">
+                                TRADITIONAL
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <label>
+                                <input type="radio" name="q4" id="optionsRadios2" value="autocompaste">
+                                AUTOCOMPASTE
+                              </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="q5">Do you experience any difficulty while doing the experiment?</label>
                             <textarea class="form-control" id="q5" name="q5" placeholder="Enter response"></textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="q6">Do you have any suggestion about the experiment to make it better?</label>
+                            <textarea class="form-control" id="q6" name="q6" placeholder="Enter response"></textarea>
+                        </div>
+                        <p id="error-text" class="hide" style="color:red;"><strong>Please answer all questions!</strong></p>
                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                     </form>
                 </div>
@@ -107,9 +116,58 @@
                     event.preventDefault();
                     var formResponses = $(this).serializeArray();
                     // Do your own form validation here.
-                    ACPToolKit.downloadFormData(formResponses, 'post');
-                    ACPToolKit.clearAllData();
-                    alert('Thank you for your participation!');
+
+                    var $errorText = document.getElementById('error-text');
+                    var $q1Container = document.getElementById("q1-container");
+                    var $q1Input = document.getElementById("q1");
+                    var $q2Container = document.getElementById("q2-container");
+                    var $q2Input = document.getElementById("q2");
+                    var $q3Container = document.getElementById("q3-container");
+                    var $q3Input = document.getElementById("q3");
+                    var $q4Label = document.getElementById("q4-label");
+
+                    var hasError = false;
+                    if(formResponses[0].value == 'option0'){
+                        $q1Container.className += " has-error";
+                        $errorText.className -= 'hide';
+                        $q1Input.focus();
+                        hasError = true;
+                    } else {
+                        $q1Container.className -= " has-error";
+                    }
+
+                    if(formResponses[1].value == 'option0'){
+                        $q2Container.className += " has-error";
+                        $errorText.className -= 'hide';
+                        $q2Input.focus();
+                        hasError = true;
+                    } else {
+                        $q2Container.className -= " has-error";
+                    }
+
+                    if(formResponses[2].value == 'option0'){
+                        $q3Container.className += " has-error";
+                        $errorText.className -= 'hide';
+                        $q3Input.focus();
+                        hasError = true;
+                    } else {
+                        $q3Container.className -= " has-error";
+                    }
+
+                    if(formResponses.length === 5){
+                        $q4Label.style.color = 'red';
+                        $errorText.className -= 'hide';
+                        
+                        hasError = true;
+                    } else {
+                        $q4Label.style.color = null;
+                    }
+
+                    if(!hasError){
+                        $errorText.className += ' hide';
+                        ACPToolKit.downloadFormData(formResponses, 'post');
+                        ACPToolKit.clearAllData();
+                    }
                 });
             });
         </script>

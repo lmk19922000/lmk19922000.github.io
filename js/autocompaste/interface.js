@@ -33,7 +33,7 @@ AutoComPaste.Interface = (function () {
   /**
    * The class constructor.
    */
-  function Interface (wm, engine, texts_json) {
+  function Interface (wm, engine, texts_json, stimuli) {
     /** Internal functions */
     this._showError = function _showerror() {
       document.getElementById('error-overlay').style.display = 'block';
@@ -111,7 +111,7 @@ AutoComPaste.Interface = (function () {
         console.log("Interface._fetchTextComplete: Finished fetching all texts");
 
         for (var text_title in privates.texts) {
-          if (privates.texts.hasOwnProperty(text_title)) {
+          if (privates.texts.hasOwnProperty(text_title) && privates.texts[text_title].indexOf(privates.stimuli) > -1) {
             console.log("Interface._fetchTextComplete: Creating window for text \"" + text_title + "\"");
             iface._createWindowForText(text_title);
           }
@@ -171,10 +171,10 @@ AutoComPaste.Interface = (function () {
       //
       // safety_bounds ensure that the window is at least some pixels within 
       // the boundaries of the display.
-      var height_safety_bounds = privates.wm.getDisplayHeight()/1.5;
-      var width_safety_bounds = privates.wm.getDisplayWidth()/5;
+      var height_safety_bounds = privates.wm.getDisplayHeight();
+      var width_safety_bounds = privates.wm.getDisplayWidth()/4;
       privates.wm.moveWindowTo(text_title,
-        Math.random() * (privates.wm.getDisplayWidth() - width_safety_bounds),
+        0.5 * (privates.wm.getDisplayWidth() - width_safety_bounds),
         Math.random() * (privates.wm.getDisplayHeight() - height_safety_bounds)
       );
     };
@@ -237,6 +237,7 @@ AutoComPaste.Interface = (function () {
 
     privates.texts = { };
     privates.texts_json = texts_json;
+    privates.stimuli = stimuli;
     privates.texts_available = 0;
     privates.texts_returned = 0;
     privates.events = { };
