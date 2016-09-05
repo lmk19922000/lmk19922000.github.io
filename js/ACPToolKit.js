@@ -70,7 +70,7 @@ var ACPToolKit = (function () {
         }
     });
 
-    if (window.location.pathname.indexOf('experiment') > -1) {
+    if (window.location.pathname.indexOf('experiment') > -1 || window.location.pathname.indexOf('practice') > -1) {
         var wm = new WindowManager('autocompaste-display');
         var currentTrialOptions = null;
         var startTime = null;

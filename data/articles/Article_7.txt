@@ -1,0 +1,17 @@
+A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element.
+Resistors may be used to reduce current flow.
+At the same time, may act to lower voltage levels within circuits.
+In electronic circuits, resistors are used to limit current flow, to adjust signal levels, bias active elements,
+and terminate transmission lines among other uses.
+High-power resistors, that can dissipate many watts of electrical power as heat,
+may be used as part of motor controls, in power distribution systems.
+Fixed resistors have resistances that only change slightly with temperature, time or operating voltage.
+Variable resistors can be used to adjust circuit elements (such as a volume control or a lamp dimmer).
+
+Resistors are common elements of electrical networks.
+Practical resistors as discrete components can be composed of various compounds and forms.
+Resistors are also implemented within integrated circuits.
+
+The electrical function of a resistor is specified by its resistance:
+common commercial resistors are manufactured over a range of more than nine orders of magnitude.
+The nominal value of the resistance falls within the manufacturing tolerance.

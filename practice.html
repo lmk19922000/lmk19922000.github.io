@@ -23,8 +23,8 @@
                         <li><a href="index.html">Welcome</a></li>
                         <li><a href="questionnaire-pre.html">Pre Questionnaire</a></li>
                         <li><a href="instructions.html">Instructions</a></li>
-                        <li><a href="practice.html">Practice</a></li>
-                        <li class="active"><a href="experiment.html">Experiment</a></li>
+                        <li class="active"><a href="practice.html">Practice</a></li>
+                        <li><a href="experiment.html">Experiment</a></li>
                         <li><a href="questionnaire-post.html">Post Questionnaire</a></li>
                     </ul>
                 </div>
@@ -34,7 +34,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3">
-                    <h1>Copy-Paste Experiment</h1>
+                    <h1>Practice</h1>
                     <hr>
                     <table class="table table-bordered">
                         <tbody>
@@ -82,67 +82,26 @@
             var trialsData;
             var currentTrial;
             var totalNumberOfTrials;
-            var headers = ['Participant id', 'Trial id', 'Technique', 'Granularity', 'Language',
-                            'Trial no', 'Stimuli', 'User Response', 'Trial Start Time',
-                            'Trial End Time', 'Trial Time', 'Accuracy'];
-            var trialData = [];
-            var participantId;
-            var sequence;
 
             function next () {
-                if (currentTrial !== 0) {
-                    // Save results of current trial
-                    var trialResult = ACPToolKit.getCurrentTrialState();
-
-                    var trialId = trialResult.id;
-                    var technique = trialResult.technique;
-                    var granularity = trialResult.granularity;
-                    var language = trialResult.language;
-                    var trialNum = currentTrial;
-                    var stimuli = trialResult.stimuli;
-                    var userResponse = trialResult.user_response;
-                    var trialStartTime = trialResult.start_time;
-                    var trialEndTime = trialResult.end_time;
-                    var trialDuration = trialResult.duration;
-                    var accuracy = stimuli === userResponse ? 1 : 0;
-
-                    var row = [participantId, trialId, technique, granularity, language, trialNum,
-                                stimuli, userResponse, trialStartTime,
-                                trialEndTime, trialDuration, accuracy];
-                    trialData.push(row);
-                }
-
-                if(currentTrial === totalNumberOfTrials/2){
-                    DataStorage.setItem('trialData', trialData);
-                    window.location = 'experiment-break.html';
-                } else {
+                if (currentTrial < totalNumberOfTrials) {
                     // Show the next trial
-                    ACPToolKit.presentTrial(trialsData[sequence[currentTrial]-1]);
+                    ACPToolKit.presentTrial(trialsData[currentTrial]);
                     currentTrial += 1;
                     $('.js-expt-current-trial').text(currentTrial);
-                }                    
+                } else {
+                    window.location = 'experiment-pre.html';
+                }
             }
 
             $(document).ready(function () {
                 $.get('data/experiments.json', function (data) {
-                    // Initialise experiments
-                    //trialsData = data.experiments;
-                    trialsData = $.parseJSON(data).experiments;
-                    //trialsOrder = data.tests;
-                    trialsOrder = $.parseJSON(data).tests;
+                    // Initialise practice
+                    //trialsData = data.practice;
+                    trialsData = $.parseJSON(data).practice;
                     currentTrial = 0;
                     totalNumberOfTrials = trialsData.length;
                     $('.js-expt-num-trials').text(totalNumberOfTrials);
-                    trialData.push(headers);
-                    participantId = ACPToolKit.getCurrentParticipantId();
-
-                    // Get the sequence of this participant
-                    for (var i =0; i< trialsOrder.length; i++){
-                        if(trialsOrder[i].participantId === participantId){
-                            sequence = trialsOrder[i].sequence;
-                            break;
-                        }
-                    }
 
                     next();
                 })

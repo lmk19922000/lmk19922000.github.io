@@ -1,0 +1,12 @@
+Vận tốc là đại lượng vật lý mô tả cả mức độ nhanh chậm lẫn chiều của chuyển động.
+Vận tốc ở đây được hiểu là vận tốc dài hay vận tốc tuyến tính. Nó khác vận tốc góc.
+Trong vật lý, vận tốc được biểu diễn bởi vectơ (có thể hiểu là "đoạn thẳng có hướng").
+
+Gia tốc là đại lượng vật lý đặc trưng cho sự thay đổi của vận tốc theo thời gian.
+Nó là một trong những đại lượng cơ bản dùng để mô tả chuyển động.
+Gia tốc là đại lượng hữu hướng. Thứ nguyên của gia tốc là độ dài trên bình phương thời gian.
+Trong hệ đơn vị quốc tế SI, gia tốc có đơn vị là m/s² (mét trên giây bình phương).
+
+Chuyển động tăng tốc khi vectơ gia tốc cùng chiều với chiều chuyển động;
+giảm tốc khi vectơ gia tốc ngược chiều với chiều chuyển động;
+đổi hướng khi véc tơ gia tốc có phương khác với phương chuyển động.
