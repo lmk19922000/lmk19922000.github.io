@@ -97,8 +97,8 @@
             $(document).ready(function () {
                 $.get('data/experiments.json', function (data) {
                     // Initialise practice
-                    //trialsData = data.practice;
-                    trialsData = $.parseJSON(data).practice;
+                    trialsData = data.practice;
+                    //trialsData = $.parseJSON(data).practice;
                     currentTrial = 0;
                     totalNumberOfTrials = trialsData.length;
                     $('.js-expt-num-trials').text(totalNumberOfTrials);

@@ -50,7 +50,7 @@
         },
         { 
             "id": "7",
-            "technique": "TRADITIONAL", 
+            "technique": "AUTOCOMPASTE", 
             "granularity": "phrase",
             "language": "English",
             "data_file": "data/texts.json",
@@ -58,7 +58,7 @@
         },
         { 
             "id": "8",
-            "technique": "TRADITIONAL", 
+            "technique": "AUTOCOMPASTE", 
             "granularity": "sentence",
             "language": "English",
             "data_file": "data/texts.json",
@@ -66,7 +66,7 @@
         },
         { 
             "id": "9",
-            "technique": "TRADITIONAL", 
+            "technique": "AUTOCOMPASTE", 
             "granularity": "paragraph",
             "language": "English",
             "data_file": "data/texts.json",
@@ -74,7 +74,7 @@
         },
         { 
             "id": "10",
-            "technique": "TRADITIONAL", 
+            "technique": "AUTOCOMPASTE", 
             "granularity": "phrase",
             "language": "Vietnamese",
             "data_file": "data/texts.json",
@@ -82,7 +82,7 @@
         },        
         { 
             "id": "11",
-            "technique": "TRADITIONAL", 
+            "technique": "AUTOCOMPASTE", 
             "granularity": "sentence",
             "language": "Vietnamese",
             "data_file": "data/texts.json",
@@ -90,11 +90,279 @@
         },
         { 
             "id": "12",
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "paragraph",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "Trong toàn vũ trụ, tổng năng lượng không đổi. Nó chỉ có thể chuyển từ hệ này sang hệ khác." 
+        },
+        { 
+            "id": "13",
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "phrase",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "value of voltage" 
+        },
+        { 
+            "id": "14",
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "sentence",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "What is active component?" 
+        },
+        { 
+            "id": "15",
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "paragraph",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "What is avionics? Aviation electronics." 
+        },
+        { 
+            "id": "16",
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "phrase",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "thuyết tương đối rộng" 
+        },        
+        { 
+            "id": "17",
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "sentence",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "Khi đun một ấm nước thì nhiệt năng đã chuyển hóa thành động năng." 
+        },
+        { 
+            "id": "18",
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "paragraph",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "Thả một hòn bi từ trên cao xuống một cái chén. Hòn bi từ trên cao rơi xuống là thế năng rớt xuống." 
+        },
+        { 
+            "id": "19",
+            "technique": "TRADITIONAL", 
+            "granularity": "phrase",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "number of positive charges" 
+        },
+        { 
+            "id": "20",
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "What is acceptor atoms?" 
+        },
+        { 
+            "id": "21",
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "What is AC coupling? Circuit that passes an AC signal while blocking a DC voltage." 
+        },
+        { 
+            "id": "22",
+            "technique": "TRADITIONAL", 
+            "granularity": "phrase",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "lực cơ bản khác" 
+        },
+        { 
+            "id": "23",
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "Trong vật lý học, lực hấp dẫn là lực hút giữa mọi vật chất." 
+        },
+        { 
+            "id": "24",
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "Năng lượng không tự sinh ra cũng không tự mất đi. Nó chỉ chuyển từ dạng này sang dạng khác." 
+        },
+        { 
+            "id": "25",
+            "technique": "TRADITIONAL", 
+            "granularity": "phrase",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "bistable multivibrator" 
+        },
+        { 
+            "id": "26",
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "What is barrier potential?" 
+        },
+        { 
+            "id": "27",
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "Relating to frequencies that can be heard by the human ear. Approximately 20 Hz to 20 kHz." 
+        },
+        { 
+            "id": "28",
+            "technique": "TRADITIONAL", 
+            "granularity": "phrase",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "cơ học cổ điển" 
+        },        
+        { 
+            "id": "29",
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "Lực hấp dẫn là một trong bốn lực cơ bản của tự nhiên." 
+        },
+        { 
+            "id": "30",
             "technique": "TRADITIONAL", 
             "granularity": "paragraph",
             "language": "Vietnamese",
             "data_file": "data/texts.json",
             "stimuli": "Trong toàn vũ trụ, tổng năng lượng không đổi. Nó chỉ có thể chuyển từ hệ này sang hệ khác." 
+        },
+        { 
+            "id": "31",
+            "technique": "TRADITIONAL", 
+            "granularity": "phrase",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "value of voltage" 
+        },
+        { 
+            "id": "32",
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "What is active component?" 
+        },
+        { 
+            "id": "33",
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "language": "English",
+            "data_file": "data/texts.json",
+            "stimuli": "What is avionics? Aviation electronics." 
+        },
+        { 
+            "id": "34",
+            "technique": "TRADITIONAL", 
+            "granularity": "phrase",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "thuyết tương đối rộng" 
+        },        
+        { 
+            "id": "35",
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "Khi đun một ấm nước thì nhiệt năng đã chuyển hóa thành động năng." 
+        },
+        { 
+            "id": "36",
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "language": "Vietnamese",
+            "data_file": "data/texts.json",
+            "stimuli": "Thả một hòn bi từ trên cao xuống một cái chén. Hòn bi từ trên cao rơi xuống là thế năng rớt xuống." 
+        }
+    ],
+    "practice":[
+        { 
+            "id": "37",
+            "technique": "TRADITIONAL", 
+            "granularity": "phrase",
+            "language": "English",
+            "data_file": "data/practice-texts.json",
+            "stimuli": "reduce current flow" 
+        },
+        { 
+            "id": "38",
+            "technique": "TRADITIONAL", 
+            "granularity": "sentence",
+            "language": "English",
+            "data_file": "data/practice-texts.json",
+            "stimuli": "Resistors are common elements of electrical networks." 
+        },
+        { 
+            "id": "39",
+            "technique": "TRADITIONAL", 
+            "granularity": "paragraph",
+            "language": "Vietnamese",
+            "data_file": "data/practice-texts.json",
+            "stimuli": "Gia tốc là đại lượng hữu hướng. Thứ nguyên của gia tốc là độ dài trên bình phương thời gian." 
+        },
+        { 
+            "id": "40",
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "phrase",
+            "language": "English",
+            "data_file": "data/practice-texts.json",
+            "stimuli": "High-power resistors" 
+        },
+        { 
+            "id": "41",
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "sentence",
+            "language": "English",
+            "data_file": "data/practice-texts.json",
+            "stimuli": "The nominal value of the resistance falls within the manufacturing tolerance." 
+        },
+        { 
+            "id": "42",
+            "technique": "AUTOCOMPASTE", 
+            "granularity": "paragraph",
+            "language": "Vietnamese",
+            "data_file": "data/practice-texts.json",
+            "stimuli": "Vận tốc ở đây được hiểu là vận tốc dài hay vận tốc tuyến tính. Nó khác vận tốc góc." 
+        }
+    ],
+    "tests":[
+        {
+            "participantId": "P01",
+            "sequence": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
+        },
+        {
+            "participantId": "P02",
+            "sequence": [2, 3, 1, 5, 6, 4, 8, 9, 7, 11, 12, 10, 14, 15, 13, 17, 18, 16, 20, 21, 19, 23, 24, 22, 26, 27, 25, 29, 30, 28, 32, 33, 31, 35, 36, 34]
+        },
+        {
+            "participantId": "P03",
+            "sequence": [3, 1, 2, 6, 4, 5, 9, 7, 8, 12, 10, 11, 15, 13, 14, 18, 16, 17, 21, 19, 20, 24, 22, 23, 27, 25, 26, 30, 28, 29, 33, 31, 32, 36, 34, 35]
+        },
+        {
+            "participantId": "P04",
+            "sequence": [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+        },
+        {
+            "participantId": "P05",
+            "sequence": [20, 21, 19, 23, 24, 22, 26, 27, 25, 29, 30, 28, 32, 33, 31, 35, 36, 34, 2, 3, 1, 5, 6, 4, 8, 9, 7, 11, 12, 10, 14, 15, 13, 17, 18, 16]
+        },
+        {
+            "participantId": "P06",
+            "sequence": [21, 19, 20, 24, 22, 23, 27, 25, 26, 30, 28, 29, 33, 31, 32, 36, 34, 35, 3, 1, 2, 6, 4, 5, 9, 7, 8, 12, 10, 11, 15, 13, 14, 18, 16, 17]
         }
     ]
 }

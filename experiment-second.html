@@ -124,10 +124,10 @@
             $(document).ready(function () {
                 $.get('data/experiments.json', function (data) {
                     // Initialise experiments
-                    //trialsData = data.experiments;
-                    trialsData = $.parseJSON(data).experiments;
-                    //trialsOrder = data.tests;
-                    trialsOrder = $.parseJSON(data).tests;
+                    trialsData = data.experiments;
+                    //trialsData = $.parseJSON(data).experiments;
+                    trialsOrder = data.tests;
+                    //trialsOrder = $.parseJSON(data).tests;
                     totalNumberOfTrials = trialsData.length;
                     currentTrial = totalNumberOfTrials/2;
                     $('.js-expt-num-trials').text(totalNumberOfTrials);
